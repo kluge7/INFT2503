@@ -1,9 +1,13 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.10)
 
-project(exercise3)
+project(Exercise3Project VERSION 1.0)
 
-add_executable(exercise3
-    main.cpp 
-    Commodity.hpp 
-)
-target_include_directories(exercise3 PRIVATE ${CMAKE_SOURCE_DIR}/exercise3)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+
+include_directories(${PROJECT_SOURCE_DIR}/include)
+
+file(GLOB_RECURSE SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
+
+add_executable(exercise_3_executable ${SRC_FILES})
